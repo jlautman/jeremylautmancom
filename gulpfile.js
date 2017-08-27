@@ -5,8 +5,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
 
-var coffeeSources = ['scripts/hello.coffee'],
-    jsSources = ['scripts/*.js'],
+var jsSources = ['scripts/*.js'],
     sassSources = ['styles/*.scss'],
     htmlSources = ['**/*.html'],
     outputDir = 'public';
@@ -38,7 +37,6 @@ gulp.task('js', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(jsSources, ['js']);
   gulp.watch(sassSources, ['sass']);
   gulp.watch(htmlSources, ['html']);
