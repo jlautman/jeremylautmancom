@@ -1,0 +1,61 @@
+.section-header {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 250%;
+}
+
+.education {
+  .program {
+    font-size: 100%;
+  }
+  .school {
+    font-size: 125%;
+    font-weight: bold;
+    
+  }
+  .major {
+    &:before {
+      content: "Major: "
+    }
+  }
+  .minor {
+    &:before {
+      content: "Minor: "
+    }
+  }
+}
+
+#skills {
+  .skill-category {
+    font-size: 125%;
+    font-weight: bold;
+  }
+}
+
+.job {
+  .title {
+    display: block;
+  }
+}
+
+.achievements {
+  font-size: 100%;
+}
+
+.dates {
+  &:after {
+    content: ")";
+  }
+  &:before {
+    content: "(";
+  }
+}
+
+.organization {
+  font-size: 150%;
+  font-weight: bold;
+}
+/** Always capitalize list items */
+li:first-letter {
+  text-transform: uppercase;
+}

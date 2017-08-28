@@ -1,10 +1,11 @@
 {
   "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
     "gulp": "latest",
-    "gulp-util": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
-    "gulp-concat": "latest",
-    "gulp-connect": "latest"
-    }
+    "gulp-util": "latest"
+  }
 }
