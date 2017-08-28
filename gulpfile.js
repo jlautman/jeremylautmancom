@@ -1,9 +1,10 @@
-var gulp = require('gulp'),
-    gutil = require('gulp-util'),
-    sass = require('gulp-sass'),
-    connect = require('gulp-connect'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat');
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const sass = require('gulp-sass');
+const connect = require('gulp-connect');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const del = require('del');
 
 var jsDir = 'scripts/';
 var sassDir = 'styles/';
@@ -14,14 +15,19 @@ var jsSources = jsDir + "**/*.js";
 var sassSources = sassDir + "**/*.scss";
 var htmlSources = htmlDir + "**/*.html";
 
+gulp.task('clean', function(){
+     return del(outputDir + '**', {force:true});
+});
 
 gulp.task('html', function() {
+  del([outputDir + "**/*.html"], {force:true});
   gulp.src(htmlSources)
   .pipe(gulp.dest(outputDir))
   .pipe(connect.reload());
 });
 
 gulp.task('sass', function() {
+  del([outputDir + "**/*.css"], {force:true});
   gulp.src(sassSources)
   .pipe(sass({style: 'expanded'}))
     .on('error', gutil.log)
@@ -31,6 +37,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
+  del([outputDir + "**/*.js"], {force:true});
   gulp.src(jsSources)
   .pipe(uglify())
   .pipe(concat('main.js'))

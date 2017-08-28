@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "del": "^3.0.0",
     "gulp": "latest",
     "gulp-concat": "latest",
     "gulp-connect": "latest",
