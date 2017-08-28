@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
     "gulp": "latest",
     "gulp-concat": "latest",
     "gulp-connect": "latest",
